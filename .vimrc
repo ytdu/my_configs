@@ -48,6 +48,8 @@ au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 let g:ycm_autoclose_preview_window_after_completion=1
 map <F3> :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
+let g:syntastic_python_checkers = ['python3', 'flake8']
+
 "python with virtualenv support
 py3 << EOF
 import os
@@ -55,8 +57,9 @@ import sys
 if 'VIRTUAL_ENV' in os.environ:
   project_base_dir = os.environ['VIRTUAL_ENV']
   activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-  execfile(activate_this, dict(__file__=activate_this))
+  exec(open(activate_this).read(), dict(__file__=activate_this))
 EOF
+" for python2, execfile(activate_this, dict(__file__=activate_this))
 
 let python_highlight_all=1
 syntax on
@@ -79,7 +82,9 @@ set expandtab
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
-set ruler
 set number
 set hlsearch
 set incsearch
+set laststatus=2
+
+iab sefl self
