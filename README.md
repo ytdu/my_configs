@@ -1,6 +1,7 @@
-This repository contains backups for personal config files:  
-  .vimrc  
-  .bash_profile  
+This repository contains backups for personal config files:
+  
+* .vimrc  
+* .bash_profile  
 
 To install Vundle, type:
 ```

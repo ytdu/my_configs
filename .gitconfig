@@ -1,0 +1,11 @@
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+name = Yantao Du
+email = duyantao2009@gmail.com
+[core]
+	editor = vim
+[color]
+	ui = true
+	status = auto
+	branch = auto
