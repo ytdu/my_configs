@@ -5,7 +5,10 @@ name = Yantao Du
 email = duyantao2009@gmail.com
 [core]
 	editor = vim
+	autocrlf = input
 [color]
 	ui = true
 	status = auto
 	branch = auto
+[merge]
+	tool = vimdiff

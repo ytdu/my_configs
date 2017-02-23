@@ -25,6 +25,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Bundle 'jewes/Conque-Shell'
+Bundle 'godlygeek/tabular'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -86,5 +87,8 @@ set number
 set hlsearch
 set incsearch
 set laststatus=2
+set fileencodings=utf8
+
+nnoremap <F12> :e ++enc=utf-8<CR>
 
 iab sefl self
