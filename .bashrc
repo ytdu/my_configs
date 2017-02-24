@@ -3,8 +3,9 @@ export LSCOLORS='gxfxcxdxcxegedabagacad'
 export PS1='\u@\H:\w$ '
 PATH=$PATH:/usr/local/mongodb/bin
 MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
-PYTHONPATH='/Users/ytdu/workspace/dnn:/Users/ytdu/workspace/ni:.'
-export PYTHONPATH
+#export PYTHONPATH='/Users/ytdu/workspace/dnn:/Users/ytdu/workspace/ni'
+export PYTHONPATH='.:'$PYTHONPATH
+export CUDA_VISIBLE_DEVICES=
 
 alias la='ls -A'
 alias ll='ls -alF'
@@ -16,3 +17,4 @@ alias grpc_protoc='python3 -m grpc_tools.protoc'
 alias sshhydra='ssh 172.11.51.195'
 alias sshocto='ssh 172.11.51.2'
 alias sshoctp='ssh 172.11.51.3'
+#alias top='htop'

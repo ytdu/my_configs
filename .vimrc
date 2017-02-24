@@ -14,7 +14,7 @@ Plugin 'gmarik/Vundle.vim'
 " Add all your plugins here (note older versions of Vundle used Bundle instead of Plugin)
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
-Bundle 'Valloric/YouCompleteMe'
+"Bundle 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/syntastic'
 Plugin 'nvie/vim-flake8'
 Plugin 'jnurmine/Zenburn'
@@ -90,5 +90,7 @@ set laststatus=2
 set fileencodings=utf8
 
 nnoremap <F12> :e ++enc=utf-8<CR>
+nnoremap j gj
+nnoremap k gk
 
 iab sefl self
