@@ -14,7 +14,7 @@ Plugin 'gmarik/Vundle.vim'
 " Add all your plugins here (note older versions of Vundle used Bundle instead of Plugin)
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
-"Bundle 'Valloric/YouCompleteMe'
+Bundle 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/syntastic'
 Plugin 'nvie/vim-flake8'
 Plugin 'jnurmine/Zenburn'
@@ -48,6 +48,7 @@ au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 let g:ycm_autoclose_preview_window_after_completion=1
 map <F3> :YcmCompleter GoToDefinitionElseDeclaration<CR>
+map <F4> :YcmCompleter GoToDeclaration<CR>
 
 let g:syntastic_python_checkers = ['python3', 'flake8']
 

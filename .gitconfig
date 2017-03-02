@@ -12,3 +12,5 @@ email = duyantao2009@gmail.com
 	branch = auto
 [merge]
 	tool = vimdiff
+[branch]
+	autosetuprebase = always
