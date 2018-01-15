@@ -1,3 +1,5 @@
+" First install Vundle:
+" git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 set nocompatible              " required
 "filetype off                  " required
 
@@ -12,7 +14,6 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " Add all your plugins here (note older versions of Vundle used Bundle instead of Plugin)
-Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
 Bundle 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/syntastic'
@@ -29,11 +30,7 @@ Bundle 'godlygeek/tabular'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
-filetype plugin indent on    " requiredet nu
-
-" Enable folding
-set foldmethod=indent
-set foldlevel=99
+filetype plugin indent on    " required
 
 au BufNewFile,BufRead *.py
     \ set tabstop=4 |
@@ -43,10 +40,18 @@ au BufNewFile,BufRead *.py
     \ set autoindent |
     \ set fileformat=unix
 
+" Enable folding
+set foldmethod=indent
+set foldlevel=99
+nnoremap <Space> za
+
 highlight BadWhitespace ctermbg=yellow guibg=yellow
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
+let g:ycm_python_binary_path = '/anaconda/bin/python3'
 let g:ycm_autoclose_preview_window_after_completion=1
+let g:ycm_confirm_extra_conf=0
+let g:ycm_always_populate_location_list=1
 map <F3> :YcmCompleter GoToDefinitionElseDeclaration<CR>
 map <F4> :YcmCompleter GoToDeclaration<CR>
 
@@ -89,9 +94,15 @@ set hlsearch
 set incsearch
 set laststatus=2
 set fileencodings=utf8
+set textwidth=0
+set wrapmargin=0
+set nowrap
+set formatoptions-=t
+set pastetoggle=<F10>
 
 nnoremap <F12> :e ++enc=utf-8<CR>
 nnoremap j gj
 nnoremap k gk
+vnoremap // y/<C-R>"<CR>
 
 iab sefl self
