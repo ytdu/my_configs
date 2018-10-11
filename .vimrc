@@ -48,7 +48,7 @@ nnoremap <Space> za
 highlight BadWhitespace ctermbg=yellow guibg=yellow
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
-let g:ycm_python_binary_path = '/anaconda/bin/python3'
+let g:ycm_python_binary_path = '/usr/local/bin/python3'
 let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_confirm_extra_conf=0
 let g:ycm_always_populate_location_list=1
@@ -99,6 +99,10 @@ set wrapmargin=0
 set nowrap
 set formatoptions-=t
 set pastetoggle=<F10>
+set cursorline
+set listchars=eol:$,tab:>-,extends:>,precedes:<
+set list
+let &colorcolumn="80,".join(range(120,999),",")
 
 nnoremap <F12> :e ++enc=utf-8<CR>
 nnoremap j gj
