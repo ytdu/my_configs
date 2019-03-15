@@ -1,62 +1,48 @@
+# If not running interactively, don't do anything
 case $- in
   *i*) ;;
     *) return;;
 esac
 
+# don't put duplicate lines or lines starting with space in the history.
+# See bash(1) for more options
 HISTCONTROL=ignoreboth
 
+# append to the history file, don't overwrite it
 shopt -s histappend
 
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=1000
 HISTFILESIZE=5000
 
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
 shopt -s checkwinsize
+
+# If set, the pattern "**" used in a pathname expansion context will
+# match all files and zero or more directories and subdirectories.
+#shopt -s globstar
+
+# make less more friendly for non-text input files, see lesspipe(1)
+[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # install brew completion:
 # brew isntall bash-completion
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-. $(brew --prefix)/etc/bash_completion
-fi
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 
 export CLICOLOR='true'
 export LSCOLORS='gxfxcxdxcxegedabagacad'
 export PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-PATH=$PATH:/usr/local/mongodb/bin
-PATH=$PATH:/Users/ytdu/bin
-MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
-export PYTHONPATH='/Users/ytdu/workspace/dnn:'$PYTHONPATH
-export PYTHONPATH='/Users/ytdu/workspace/dnn_parser/src:'$PYTHONPATH
-export PYTHONPATH='/Users/ytdu/workspace/ni:'$PYTHONPATH
-export PYTHONPATH='/Users/ytdu/workspace/n3lu:'$PYTHONPATH
+export EDITOR=vim
 export PYTHONPATH='.:'$PYTHONPATH
-export PYTHONPATH='/Users/ytdu/workspace/word-embeddings-benchmarks:'$PYTHONPATH
 export CUDA_VISIBLE_DEVICES=
+export LC_CTYPE=C.UTF-8
+export LC_ALL=C.UTF-8
 
 alias la='ls -A'
 alias ll='ls -alF'
 alias l='ls -CF'
-alias vi='/usr/local/Cellar/vim/8.1.0001/bin/vim'
-alias vim='/usr/local/Cellar/vim/8.1.0001/bin/vim'
-#alias python='/usr/local/bin/python3'
-alias sshhydra='ssh 10.8.0.114'
-alias sshocto='ssh 10.8.0.42'
-alias sshoctp='ssh 10.8.0.46'
-alias sshoctq='ssh 10.8.0.106'
-alias sshoctr='ssh 10.8.0.206'
-alias sshocts='ssh 10.8.0.182'
-alias sshoctt='ssh 10.8.0.186'
-alias sshoctu='ssh 10.8.0.34'
-alias sshoctv='ssh 10.8.0.250'
-alias sshoctw='ssh 10.8.0.14'
-alias sshmini-gw='ssh 10.8.0.94'
-alias sshquad='ssh 10.8.0.62'
-alias sshquad1='ssh 10.8.0.150'
-alias sshquad2='ssh 10.8.0.22'
-alias sshquad3='ssh 10.8.0.54'
-alias sshquad4='ssh 10.8.0.210'
-alias sshquad5='ssh 10.8.0.218'
-alias sshquad6='ssh 10.8.0.202'
 alias top='htop'
-alias gdiff='git diff --ignore-space-at-eol'
-alias gpush='git push -f upstream'
-alias gpull='git pull -f upstream'
+
+# allow core dump
+ulimit -c unlimited

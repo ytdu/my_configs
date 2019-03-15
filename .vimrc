@@ -15,7 +15,7 @@ Plugin 'gmarik/Vundle.vim'
 
 " Add all your plugins here (note older versions of Vundle used Bundle instead of Plugin)
 Plugin 'vim-scripts/indentpython.vim'
-Bundle 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/syntastic'
 Plugin 'nvie/vim-flake8'
 Plugin 'jnurmine/Zenburn'
@@ -25,8 +25,10 @@ Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
-Bundle 'jewes/Conque-Shell'
-Bundle 'godlygeek/tabular'
+Plugin 'jewes/Conque-Shell'
+Plugin 'godlygeek/tabular'
+Plugin 'Yggdroot/indentLine'
+Plugin 'farmergreg/vim-lastplace'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -96,11 +98,11 @@ set laststatus=2
 set fileencodings=utf8
 set textwidth=0
 set wrapmargin=0
-set nowrap
+set wrap
 set formatoptions-=t
 set pastetoggle=<F10>
 set cursorline
-set listchars=eol:$,tab:>-,extends:>,precedes:<
+set listchars=eol:$,tab:▸\ ,extends:>,precedes:<
 set list
 let &colorcolumn="80,".join(range(120,999),",")
 
