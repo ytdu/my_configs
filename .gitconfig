@@ -1,26 +1,28 @@
 # This is Git's per-user configuration file.
 [user]
 # Please adapt and uncomment the following lines:
-name = Yantao Du
-email = duyantao2009@gmail.com
+    name = Yantao Du
+    email = duyantao2009@gmail.com
 [core]
-	editor = vim
-	autocrlf = input
-	safecrlf = true
+    editor = vim
+    autocrlf = input
+    safecrlf = true
+[credential]
+    helper = store
 [color]
-	ui = true
-	status = auto
-	branch = auto
+    ui = true
+    status = auto
+    branch = auto
 [merge]
-	tool = vimdiff
+    tool = vimdiff
 [branch]
-	autosetuprebase = always
+    autosetuprebase = always
 [alias]
-  lg1 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
-  lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
-  lg = !"git lg1"
-  sb = submodule update --init --recursive
-  st = status
-  co = checkout
-  ci = commit
-  br = branch
+    lg1 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+    lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+    lg = !"git lg1"
+    sb = submodule update --init --recursive
+    st = status
+    co = checkout
+    ci = commit
+    br = branch
